@@ -18,6 +18,6 @@ async def root():
 
 @app.post("/csv_dummy")
 async def root(item:Item):
-    print(item.sku_id)
+    print(item)
     return 200
 

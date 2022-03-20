@@ -27,13 +27,9 @@ def send_to_broker():
     transactions=make_normal_json(csvFilePath=path_to_csv+'transactions.csv')
     
     url = Host+"/csv_dummy"
-    requests.post(url,data={
-    "transaction_id": "dsdsdsdsd",
-    "sku_id": "string",
-    "sku_price": "string",
-    "transaction_datetime": "string"
-    })
-    #print(x)
+    for obj in json.loads(transactions):
+     x = requests.post(url,json=obj)
+     print(x)
 send_to_broker()
 
 
