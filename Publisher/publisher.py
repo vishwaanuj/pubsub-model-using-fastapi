@@ -6,7 +6,7 @@ from csv_generator import csv_dummy_generator
 import csv
 import json
 import requests
-path_to_csv="./csvFiles/"
+path_to_csv="../csvFiles/"
 Host=" http://127.0.0.1:8000"
 #csv_dummy_generator(path=path_to_csv,dummy_range=20)
 
@@ -28,8 +28,21 @@ def send_to_broker():
     
     url = Host+"/csv_dummy"
     for obj in json.loads(transactions):
+     print("pew pew--->",end=" ")
      x = requests.post(url,json=obj)
-     print(x)
+     if x.json()[0] == 200:
+        print(f"{x.json()[1]} was posted succesfully " )
+     else:
+         print(f"failed with {x.json()[0]} response")
+         break
+     
+def send_live_data():
+    
+    print("to send live data ")
+    t_id=input("transaction_id:")
+    sku_id=input("sku_id:")
+    sku_price=input("sku_price:")
+    t=input("sku_id:")
 send_to_broker()
 
 
