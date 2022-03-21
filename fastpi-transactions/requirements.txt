@@ -1,0 +1,6 @@
+fastapi
+sqlalchemy
+uvicorn
+setuptools 
+ibm_db 
+ibm_db_sa 
