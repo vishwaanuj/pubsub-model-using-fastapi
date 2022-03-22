@@ -32,7 +32,19 @@ model.Base.metadata.create_all(engine)
 
 
 def transaction_history_by(param,db,days,by):
-    #using count function for getting the frequency of sku_id
+   
+    
+    '''
+    #the following function will retuurn the total_cost in N Days by Name or category
+    
+    params
+    param:transaction_model column
+    db:database  (Transaction.db)
+    dayns : last N Days
+    by: By sku name or sku category
+    
+    return:json obj
+    '''
   
     e=db.query(label('sku_id', 
               param),
