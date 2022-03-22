@@ -15,19 +15,7 @@ def string_todate(obj):
 def date_tostring(obj):
     return datetime.strftime(obj, '%d/%m/%Y')
 
-#creating the sku.db in sqlite to be used on on mount phase of app
-def sku_csv_to_sql(path,engine,table_name="sku"):
-    with open(path, newline='') as csvfile:
-        reader = csv.DictReader(csvfile)
-        columns = ['sku_id','sku_name','sku_category']
-        df = pd.DataFrame(data=reader, columns=columns)
-        try:
-            with engine.begin() as connection:
-                df.to_sql(table_name, con=connection)
-                print('Done, ok!')
-        except Exception as e :
-            print(f'{e}')
-            pass
+
         
       
 def get_last_ndays(obj,days):
