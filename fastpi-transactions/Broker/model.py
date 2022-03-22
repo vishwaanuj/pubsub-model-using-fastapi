@@ -1,5 +1,9 @@
 '''
-Creating schemas for the databases
+Creating models for the api 
+
+
+returns:
+Database Model 
 '''
 
 from sqlalchemy import Column,Integer,String,Float,DateTime,ForeignKey
@@ -15,15 +19,6 @@ class Transaction_model(Base):
     transaction_datetime=Column(DateTime)
     sku_name=Column(String)
     sku_cat=Column(String)
-   
-    #sku_data=relationship('sku_model',back_populates='sku_d')
-    
-
- 
   
-    
-
-    #sku_data = relationship("sku_model", back_populates="items")
-    
     
     
