@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 '''
 
-Creating serializer models
+Creating schemas for the API 
 
 '''
 class Transactions(BaseModel):
@@ -11,10 +11,4 @@ class Transactions(BaseModel):
     sku_id:str
     sku_price:float
     transaction_datetime:str
-    
-    
-class SKU(BaseModel):
-    sku_name:str
-    sku_category:str
-    sku_id:str
     
