@@ -22,10 +22,8 @@ def make_normal_json(csvFilePath):
             data.append(rows)
     return(json.dumps(data))
 
-def send_to_broker():
-         
+def send_to_broker():         
     transactions=make_normal_json(csvFilePath=path_to_csv+'transactions.csv')
-    
     url = Host+"/csv_dummy"
     for obj in json.loads(transactions):
      print("pew pew--->",end=" ")
@@ -37,7 +35,6 @@ def send_to_broker():
          break
      
 def send_live_data():
-    
     print("to send live data ")
     t_id=input("transaction_id:")
     sku_id=input("sku_id:")
