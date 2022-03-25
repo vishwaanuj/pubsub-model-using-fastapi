@@ -49,9 +49,7 @@ def transaction_history_by(param,db,days,by):
     e=db.query(param,func.sum(model.Transaction_model.sku_price)).group_by(param).filter(tr.transaction_datetime > days).all()
     total_cost=[]#dict to store the id and sum of prices
     
-    '''for i in e :#looping the result from above with unique sku_id and frequency dict
-       res=db.query(tr).filter(param==i[0]).first()#again querying for the price
-       total_cost.append( {by:i[0],'total_amount':res.sku_price*i[1]})'''
+  
     return e
 
   
